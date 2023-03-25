@@ -1,7 +1,7 @@
 .inf_img{
-    width: 400px;
-    height: 400px;
-    margin-top: 50px;
+    width: 350px;
+    height: 350px;
+    margin-top: 30px;
     border-radius: 20px;
     object-fit:cover;
 }
@@ -17,6 +17,45 @@
 .imgs{
     display: flex;
 }
-.txt1{
+/* .txt1{
+    margin-top: 40px;
+} */
+.tomon{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card2{
+    width: 350px;
+    height: 350px;
     margin-top: 50px;
+}
+.card3{
+    display: flex;
+    margin-top: 70px;
+}
+.lorem{
+    width: 350px;
+    /* margin-top: 80px; */
+    margin-left: 50px;
+}
+.price{
+    margin-top: 20px;
+    font-family: 'Times New Roman';
+}
+
+.korz{
+    width: 250px;
+    border: 1px solid #4117ea;
+    color: #4117ea;
+    background-color: silver;
+    height: 45px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.korz:hover{
+    color: white;
+    background-color: #4117ea;
+    transition: 0.5s;
 }
