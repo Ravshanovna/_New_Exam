@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./card.css";
-// import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useSelector , useDispatch} from 'react-redux'
 import { useNavigate } from "react-router-dom";
 
@@ -14,7 +14,9 @@ const Card = () => {
   function Batafsil(params) {
     naviget(`/Info/${params.id}`)
   }
-
+  function Izbraniy(index){
+    dispatch({type:"Izbarniy",payload:{index:index}})
+  }
   return (
     <div>
       <div className="omega">
@@ -24,6 +26,8 @@ const Card = () => {
               {selector.map((item, index) => {
                 return (
                   <div className="card1" key={index}>
+                    <AiOutlineHeart onClick={()=> Izbarniy(index)}/>
+
                     <img className="img" src={item.img} alt={item.name} />
                     <h3 className="name">
                       <b>{item.name}</b>

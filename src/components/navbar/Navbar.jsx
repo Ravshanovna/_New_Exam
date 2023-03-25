@@ -34,7 +34,10 @@ const Navbar = () => {
 
   return (
     <div className="nav">
+      <Link style={{textDecoration:"none",color:"black"}} to="/">
+      
       <h2>QPICK</h2>                           
+      </Link>
       <input className="inp_search" type="text" onInput={(val)=> Input(val.target.value)} placeholder="Qidiruv" /> 
       <button type="button" className="position-relative heart">
         <AiOutlineHeart className="hearts" />
