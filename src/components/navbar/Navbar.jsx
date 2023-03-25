@@ -3,12 +3,31 @@ import { Link } from "react-router-dom";
 import {AiOutlineHeart} from 'react-icons/ai'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import './navbar.css'
+import axios from "axios";
+import { useDispatch } from "react-redux";
+
+
 const Navbar = () => {
-    
-   const [search,setSearch]= useState(null)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    axios.get("https://api.npoint.io/2a2f92708e1ef812502c")
+    .then((res)=>{
+      dispatch({type:"YuborCard" , payload:res.data})
+    })
+  }, []);
 
   function Input(params){
-    console.log(params);
+    axios.get("https://api.npoint.io/2a2f92708e1ef812502c")
+  .then((res)=>{
+    let data = res.data.filter(item=>{
+      return item.name.toLowerCase().includes(params.toLowerCase())
+     })
+    //  console.log(data);
+     dispatch({type:"YuborCard" , payload:data})
+  })
+    
   }
 
   return (
