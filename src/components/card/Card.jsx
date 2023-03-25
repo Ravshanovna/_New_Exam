@@ -6,8 +6,6 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Card = () => {
   const [mass, setMass] = useState([]);
-//   const dispatch = useDispatch();
-
   useEffect(() => {
     axios
       .get("https://api.npoint.io/2a2f92708e1ef812502c")
@@ -19,11 +17,6 @@ const Card = () => {
         console.log(err);
       });
   }, []);
-
-//  function like(index) {
-//    dispatch({ type: "like", payload: { index: index } });
-//  }
-
   return (
     <div>
       <div className="omega">
@@ -35,9 +28,6 @@ const Card = () => {
                 <b>{item.name}</b>
               </h3>
               <button className="batafsil">Batafsil</button>
-              {/* <h3 className="like" onClick={() => like(index)}>
-                {item.status2 == true ? <AiOutlineHeart /> : <AiFillHeart />}
-              </h3> */}
             </div>
           );
         })}
