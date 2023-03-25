@@ -2,13 +2,18 @@ import React from "react";
 import axios from "axios";
 import "./card.css";
 // import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { useSelector } from 'react-redux'
+import { useSelector , useDispatch} from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 
 const Card = () => {
   const selector = useSelector(state => state.CardFilter)
-  console.log(selector, '=>Redux');
+  const dispatch = useDispatch()
+  const naviget = useNavigate()
 
+  function Batafsil(params) {
+    naviget(`/Info/${params.id}`)
+  }
 
   return (
     <div>
@@ -23,7 +28,7 @@ const Card = () => {
                     <h3 className="name">
                       <b>{item.name}</b>
                     </h3>
-                    <button className="batafsil">Batafsil</button>
+                    <button onClick={()=>{Batafsil(item)}} className="batafsil">Batafsil</button>
                   </div>
                 );
               })}

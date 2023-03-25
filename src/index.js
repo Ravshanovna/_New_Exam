@@ -7,6 +7,7 @@ import Card from './components/card/Card';
 import {BrowserRouter , Routes , Route} from 'react-router-dom' 
 import { Provider } from 'react-redux';
 import store from './components/store/store';
+import Info from './components/info/Info';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Routes>
           <Route path='/' element={<App />}>
             <Route path='/' element={<Card />}/>
+            <Route path='/Info/:id' element={<Info />}/>
           </Route>
       </Routes>
     </BrowserRouter>

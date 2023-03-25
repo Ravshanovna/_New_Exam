@@ -12,22 +12,24 @@ const Navbar = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    axios.get("https://api.npoint.io/2a2f92708e1ef812502c")
+    axios.get("https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick")
     .then((res)=>{
       dispatch({type:"YuborCard" , payload:res.data})
+    })
+    .catch(error=>{
+      console.log(error);
     })
   }, []);
 
   function Input(params){
-    axios.get("https://api.npoint.io/2a2f92708e1ef812502c")
+    axios.get("https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick")
   .then((res)=>{
     let data = res.data.filter(item=>{
       return item.name.toLowerCase().includes(params.toLowerCase())
      })
     //  console.log(data);
      dispatch({type:"YuborCard" , payload:data})
-  })
-    
+  }) 
   }
 
   return (
