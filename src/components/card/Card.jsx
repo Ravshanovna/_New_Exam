@@ -26,7 +26,7 @@ const Card = () => {
               {selector.map((item, index) => {
                 return (
                   <div className="card1" key={index}>
-                    <AiOutlineHeart onClick={()=> Izbarniy(index)}/>
+                    {/* <AiOutlineHeart onClick={()=> Izbarniy(index)}/> */}
 
                     <img className="img" src={item.img} alt={item.name} />
                     <h3 className="name">
