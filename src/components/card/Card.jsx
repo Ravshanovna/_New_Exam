@@ -49,9 +49,9 @@ const Card = () => {
                   <div className="card1" key={index}>
                     {
                       item.status1 == false ?
-                      <AiOutlineHeart  onClick={()=> Qora(item.id)}/>
+                      <AiOutlineHeart className="oq"  onClick={()=> Qora(item.id)}/>
                       :
-                      <AiFillHeart  onClick={()=> Oq(item.id)}/>
+                      <AiFillHeart className="qora"  onClick={()=> Oq(item.id)}/>
                     }
 
                     <img className="img" src={item.img} alt={item.name} />

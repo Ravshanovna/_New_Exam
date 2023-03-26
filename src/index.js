@@ -8,6 +8,8 @@ import {BrowserRouter , Routes , Route} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import store from './components/store/store';
 import Info from './components/info/Info';
+import Like from './components/like/Like';
+import Korzinka from './components/korzinka/Korzinka';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -18,6 +20,8 @@ root.render(
           <Route path='/' element={<App />}>
             <Route path='/' element={<Card />}/>
             <Route path='/Info/:id' element={<Info />}/>
+            <Route path='/like' element={<Like/>}/>
+            <Route path='/korzinka' element={<Korzinka/>}/>
           </Route>
       </Routes>
     </BrowserRouter>
