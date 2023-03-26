@@ -2,21 +2,42 @@ import React from "react";
 import axios from "axios";
 import "./card.css";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { useSelector , useDispatch} from 'react-redux'
+import { useSelector} from 'react-redux'
 import { useNavigate } from "react-router-dom";
 
 
 const Card = () => {
   const selector = useSelector(state => state.CardFilter)
-  const dispatch = useDispatch()
   const naviget = useNavigate()
 
   function Batafsil(params) {
     naviget(`/Info/${params.id}`)
   }
-  function Izbraniy(index){
-    dispatch({type:"Izbarniy",payload:{index:index}})
+  function Qora(params){
+    axios.put(`https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick/${params}` ,{
+      status1:true
+    })
+    .then((res)=>{
+      console.log(res.data);
+      window.location.reload()
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
   }
+  function Oq(params) {
+    axios.put(`https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick/${params}` ,{
+      status1:false
+    })
+    .then((res)=>{
+      console.log(res.data);
+      window.location.reload()
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  }
+  
   return (
     <div>
       <div className="omega">
@@ -26,7 +47,12 @@ const Card = () => {
               {selector.map((item, index) => {
                 return (
                   <div className="card1" key={index}>
-                    {/* <AiOutlineHeart onClick={()=> Izbarniy(index)}/> */}
+                    {
+                      item.status1 == false ?
+                      <AiOutlineHeart  onClick={()=> Qora(item.id)}/>
+                      :
+                      <AiFillHeart  onClick={()=> Oq(item.id)}/>
+                    }
 
                     <img className="img" src={item.img} alt={item.name} />
                     <h3 className="name">

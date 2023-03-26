@@ -4,17 +4,25 @@ import {AiOutlineHeart} from 'react-icons/ai'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import './navbar.css'
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 
 
 const Navbar = () => {
 
   const dispatch = useDispatch()
+  const selector = useSelector(state => state.NumberHeader)
+  const [NumberLike , setNumberLike] = useState([])
+  console.log(selector);
 
   useEffect(() => {
     axios.get("https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick")
     .then((res)=>{
       dispatch({type:"YuborCard" , payload:res.data})
+      let data = res.data.filter(item=>{
+        return item.status1 == true
+      })
+      console.log(data);
+      setNumberLike(data)
     })
     .catch(error=>{
       console.log(error);
@@ -42,7 +50,7 @@ const Navbar = () => {
       <button type="button" className="position-relative heart">
         <AiOutlineHeart className="hearts" />
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          0
+          {NumberLike.length}
         </span>
       </button>
       <button type="button" className="position-relative heart">
