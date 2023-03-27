@@ -4,7 +4,7 @@ import {AiOutlineHeart} from 'react-icons/ai'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import './navbar.css'
 import axios from "axios";
-import { useDispatch , useSelector} from "react-redux";
+import { useDispatch} from "react-redux";
 
 
 const Navbar = () => {

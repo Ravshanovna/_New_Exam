@@ -52,6 +52,12 @@ export default function Info() {
           <b>{Data.name}</b>
           {Data.name == "Iphone 12 pro" ||
           Data.name == "Iphone 12 pro selikonoviy" ||
+          Data.name == "Redmi 9" ||
+          Data.name == "Redmi 10" ||
+          Data.name == "Redmi Note 11 pro" ||
+          Data.name == "Iphone 14" ||
+          Data.name == "Poco x3 pro" ||
+          Data.name == "Asus rog 5" ||
           Data.name == "Iphone 13 pro" ? (
             <>
               <h4>
@@ -110,7 +116,9 @@ export default function Info() {
           <h2 className="price">
             <b>Narxi: {Data.price}$</b>
           </h2>
-            <button onClick={()=>Add(Data.id)} className="korz">Korzinka Qo'shish</button>
+          <button onClick={() => Add(Data.id)} className="korz">
+            Korzinka Qo'shish
+          </button>
         </h1>
         <h4 className="lorem">
           <b>Malumot:</b> Lorem ipsum dolor sit amet consectetur adipisicing

@@ -58,7 +58,7 @@ const Card = () => {
                     <h3 className="name">
                       <b>{item.name}</b>
                     </h3>
-                    <button onClick={()=>{Batafsil(item)}} className="batafsil">Batafsil</button>
+                    <button onClick={()=>Batafsil(item)} className="batafsil">Batafsil</button>
                   </div>
                 );
               })}
