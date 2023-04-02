@@ -13,15 +13,15 @@ const Navbar = () => {
   const [NumberLike , setNumberLike] = useState([])
   const[NumberKorzinka,setNumberKorzinka]= useState([])
   useEffect(() => {
-    axios.get("https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick")
+    axios.get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
     .then((res)=>{
       dispatch({type:"YuborCard" , payload:res.data})
       let data = res.data.filter(item=>{
-        return item.status1 == true
+        return item.status2 == true
       })
        dispatch({ type: "YuborCard2", payload: res.data });
        let data2 = res.data.filter((item) => {
-         return item.status2 == true;
+         return item.status == true;
        });
       setNumberLike(data)
       setNumberKorzinka(data2)
@@ -32,7 +32,7 @@ const Navbar = () => {
   }, []);
 
   function Input(params){
-    axios.get("https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick")
+    axios.get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
   .then((res)=>{
     let data = res.data.filter(item=>{
       return item.name.toLowerCase().includes(params.toLowerCase())
@@ -42,16 +42,20 @@ const Navbar = () => {
   }
 
   return (
-    <div className="nav">
-      <Link style={{textDecoration:"none",color:"black"}} to="/">
-      
-      <h2>QPICK</h2>                           
+    <div className="main">
+      <div className="px-4 bg-light">
+        <div className="d-flex justify-content-between align-items-center py-3">
+        <Link  to="/">
+        <img
+              className="imgee"
+              src={"https://www.linkpicture.com/q/QPICK.png"}
+              alt="rasm"
+            />                     
       </Link>
-      <input className="inp_search" type="text" onInput={(val)=> Input(val.target.value)} placeholder="Qidiruv" /> 
-      <Link to='like'>
-      
-      <button type="button" className="position-relative heart">
-        <AiOutlineHeart className="hearts" />
+      <input className="search" type="text" onInput={(val)=> Input(val.target.value)} placeholder="Qidiruv" /> 
+      <Link to='/like'>
+      <button type="button" className="btn position-relative ps-5 heart">
+        <h2><AiOutlineHeart /></h2>
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {NumberLike.length}
         </span>
@@ -59,13 +63,15 @@ const Navbar = () => {
       </Link>
       <Link to='/korzinka'>
       
-      <button type="button" className="position-relative heart">
-        <AiOutlineShoppingCart className="hearts" />
+      <button type="button" className=" btn position-relative heart">
+        <h2><AiOutlineShoppingCart /></h2>
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {NumberKorzinka.length}
         </span>
       </button>
       </Link>
+        </div>
+      </div>
     </div>
   );
 };

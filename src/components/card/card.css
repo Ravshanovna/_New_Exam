@@ -1,50 +1,24 @@
-.iphone13 {
-  margin-top: -305px;
-  margin-left: 800px;
+.img{
+  text-align: center;
 }
-.img {
-  width: 200px;
-  object-fit: cover;
-  margin-top: 20px;
-  height: 250px;
-}
-.card1{
-    width:350px;
-    background-color: white;
+.card{
     border: none;
-    height: 400px;
-    border-radius: 25px;
-    margin-left: 50px;
-    margin-top: 20px;
-    text-align: center;
-    position: relative;
-}
-.omega {
-  /* background-color: black; */
-  padding-left: 50px;
-  padding-top: 50px;
-
-  display: flex;
-  flex-wrap: wrap;
+    border-radius: 0px;
+  
 }
 .name{
  margin-top: 10px;
 }
 .batafsil{
-    width: 250px;
     border: 1px solid #4117ea;
-    color: #4117ea;
-    background-color: white;
+    color: white;
+    background-color: #4117ea;
     height: 45px;
-    transition: 0.5s;
+    /* transition: 0.5s; */
     margin-top: 10px;
     border-radius: 10px;
 }
-.batafsil:hover{
-    color: white;
-    background-color: #4117ea;
-    transition: 0.5s;
-}
+
 .like {
   color: orangered;
   position: absolute;

@@ -11,10 +11,10 @@ const Like = () => {
 
     useEffect(() => {
       axios
-        .get("https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick")
+        .get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
         .then((res) => {
           let data = res.data.filter(item=>{
-            return item.status1 == true
+            return item.status2 == true
           })
           console.log(data);
           setData(data)
@@ -26,8 +26,8 @@ const Like = () => {
 
   function Qora(params) {
     axios
-      .put(`https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick/${params}`, {
-        status1: true,
+      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params}`, {
+        status2: false,
       })
       .then((res) => {
         console.log(res.data);
@@ -39,8 +39,8 @@ const Like = () => {
   }
   function Oq(params) {
     axios
-      .put(`https://641d861d4366dd7def3fe5f8.mockapi.io/Qpick/${params}`, {
-        status1: false,
+      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params}`, {
+        status2: true,
       })
       .then((res) => {
         console.log(res.data);
@@ -56,12 +56,12 @@ const Like = () => {
   }
 
     return (
-        <div className='omega'>
+        <div>
             {
               (data.length>0)&& data.map((item,index)=>{
                 return (
                   <div className="card1" key={index}>
-                    {item.status1 == false ? (
+                    {item.status == true ? (
                       <AiOutlineHeart
                         className="oq"
                         onClick={() => Qora(item.id)}
@@ -74,16 +74,15 @@ const Like = () => {
                     )}
 
                     <img className="img" src={item.img} alt={item.name} />
-                    <h3 className="name">
+                    <h3>
                       <b>{item.name}</b>
                     </h3>
                     <button
                       onClick={() => {
                         Batafsil(item);
                       }}
-                      className="batafsil"
                     >
-                      Batafsil
+                      Learn_More
                     </button>
                   </div>
                 );

@@ -7,7 +7,7 @@ import Card from "./components/card/Card";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./components/store/store";
-import Info from "./components/info/Info";
+import Card2 from "./components/card2/Card2"
 import Like from "./components/like/Like";
 import Korzinka from "./components/korzinka/Korzinka";
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,7 +19,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="/" element={<Card />} />
-            <Route path="/Info/:id" element={<Info />} />
+            <Route path="/Info/:id" element={<Card2 />} />
             <Route path="/like" element={<Like />} />
             <Route path="/korzinka" element={<Korzinka />} />
           </Route>

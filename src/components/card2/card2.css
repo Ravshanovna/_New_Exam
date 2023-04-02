@@ -1,0 +1,18 @@
+.inf_img{
+    width: 350px;
+    height: 400px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+.korz{
+    border: 1px solid #4117ea;
+    color: #fff;
+    background-color: #4117ea;
+    border-radius: 10px;
+}
+.img{
+    border-radius: 20px;
+}
+.h4{
+    color: rgb(65, 23, 234);
+}
