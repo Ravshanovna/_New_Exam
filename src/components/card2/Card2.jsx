@@ -9,7 +9,7 @@ export default function Info() {
   useEffect(() => {
     axios
       .get(
-        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params.id}`
+        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params.id}`
       )
       .then((res) => {
         setData({ ...res.data });
@@ -29,7 +29,7 @@ export default function Info() {
   function Add(params) {
     axios
       .put(
-        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params}`,
+        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params}`,
         {
           status: true
         }

@@ -2,23 +2,21 @@
   text-align: center;
 }
 .card{
-    border: none;
-    border-radius: 0px;
-  
+  border: none;
+  border-radius: 30px;
 }
 .name{
  margin-top: 10px;
 }
 .batafsil{
-    border: 1px solid #4117ea;
-    color: white;
-    background-color: #4117ea;
-    height: 45px;
-    /* transition: 0.5s; */
-    margin-top: 10px;
-    border-radius: 10px;
+  border: 1px solid #4117ea;
+  color: white;
+  background-color: #4117ea;
+  height: 45px;
+  /* transition: 0.5s; */
+  margin-top: 10px;
+  border-radius: 10px;
 }
-
 .like {
   color: orangered;
   position: absolute;

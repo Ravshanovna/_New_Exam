@@ -13,15 +13,15 @@ const Navbar = () => {
   const [NumberLike , setNumberLike] = useState([])
   const[NumberKorzinka,setNumberKorzinka]= useState([])
   useEffect(() => {
-    axios.get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
+    axios.get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1")
     .then((res)=>{
       dispatch({type:"YuborCard" , payload:res.data})
       let data = res.data.filter(item=>{
-        return item.status2 == true
+        return item.status1 == true
       })
        dispatch({ type: "YuborCard2", payload: res.data });
        let data2 = res.data.filter((item) => {
-         return item.status == true;
+         return item.status2 == true;
        });
       setNumberLike(data)
       setNumberKorzinka(data2)
@@ -31,8 +31,8 @@ const Navbar = () => {
     })
   }, []);
 
-  function Input(params){
-    axios.get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
+  function InpVal(params){
+    axios.get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1")
   .then((res)=>{
     let data = res.data.filter(item=>{
       return item.name.toLowerCase().includes(params.toLowerCase())
@@ -52,7 +52,7 @@ const Navbar = () => {
               alt="rasm"
             />                     
       </Link>
-      <input className="search" type="text" onInput={(val)=> Input(val.target.value)} placeholder="Qidiruv" /> 
+      <input className="search" type="text" onInput={(val)=> InpVal(val.target.value)} placeholder="Qidiruv" /> 
       <Link to='/like'>
       <button type="button" className="btn position-relative ps-5 heart">
         <h2><AiOutlineHeart /></h2>

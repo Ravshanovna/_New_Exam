@@ -9,20 +9,19 @@ const Card = () => {
   const selector = useSelector((state) => state.CardFilter);
   const naviget = useNavigate();
 
-  function Batafsil(params) {
+  function Push(params) {
     naviget(`/Info/${params.id}`);
   }
   function Qora(params) {
     console.log(params,"qora");
     axios
       .put(
-        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone`,
+        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1`,
         {
-          status: true
+          status1: true
         }
       )
       .then((res) => {
-        console.log(res.data);
         window.location.reload();
       })
       .catch((error) => {
@@ -32,8 +31,8 @@ const Card = () => {
   function Oq(params) {
     console.log(params,"oq");
     axios
-      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone`,{
-          status: false
+      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1`,{
+          status1: false
         })
       .then((res) => {
         console.log(res.data);
@@ -43,7 +42,6 @@ const Card = () => {
         console.log(error);
       });
   }
-
   return (
     <div className="container">
       <div className="row pb-5 text-center align-items-center">
@@ -53,7 +51,7 @@ const Card = () => {
               return (
                 <div className="col-4" >
                   <div className="card my-3" key={index}>
-                    {item.status2 == false ? (
+                    {item.status1 == false ? (
                       <AiOutlineHeart
                         className="oq"
                         onClick={() => Qora(item.id)}
@@ -75,16 +73,16 @@ const Card = () => {
                     <h3 className="name">
                       <b>{item.name}</b>
                     </h3>
-                    <button onClick={() => Batafsil(item)} className="batafsil mx-5 mb-3 fw-bold fs-5">
+                    <button onClick={() => Push(item)} className="batafsil mx-5 mb-3 fw-bold fs-5">
                       Learn_More
                     </button>
                   </div>
-                // </div>
+                </div>
               );
             })}
           </>
         ) : (
-          <>Loading...</>
+          <>Loading...</>  
         )}
       </div>
     </div>

@@ -11,10 +11,10 @@ const Like = () => {
 
     useEffect(() => {
       axios
-        .get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
+        .get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1")
         .then((res) => {
           let data = res.data.filter(item=>{
-            return item.status2 == true
+            return item.status1 == true
           })
           console.log(data);
           setData(data)
@@ -26,8 +26,8 @@ const Like = () => {
 
   function Qora(params) {
     axios
-      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params}`, {
-        status2: false,
+      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params}`, {
+        status1: true,
       })
       .then((res) => {
         console.log(res.data);
@@ -39,8 +39,8 @@ const Like = () => {
   }
   function Oq(params) {
     axios
-      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params}`, {
-        status2: true,
+      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params}`, {
+        status1: false,
       })
       .then((res) => {
         console.log(res.data);
@@ -51,7 +51,7 @@ const Like = () => {
       });
   }
 
-  function Batafsil(params) {
+  function Push(params) {
     naviget(`/Info/${params.id}`);
   }
 
@@ -79,7 +79,7 @@ const Like = () => {
                     </h3>
                     <button
                       onClick={() => {
-                        Batafsil(item);
+                        Push(item);
                       }}
                     >
                       Learn_More

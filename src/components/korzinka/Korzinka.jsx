@@ -9,10 +9,10 @@ const Korzinka = () => {
 
   useEffect(() => {
     axios
-      .get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone")
+      .get("https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1")
       .then((res) => {
         let data = res.data.filter((item) => {
-          return item.status == true;
+          return item.status2 == true;
         });
         console.log(data);
         setData(data);
@@ -26,12 +26,12 @@ const Korzinka = () => {
     naviget(`/Info/${params.id}`);
   }
 
-  function Delete(params) {
+  function Del(params) {
     axios
       .put(
-        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/telephone/${params}`,
+        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params}`,
         {
-          status: false
+          status2: false
         }
       )
       .then((res) => {
@@ -48,11 +48,11 @@ const Korzinka = () => {
         {data.length > 0 &&
           data.map((item, index) => {
             return (
-              <div className="col-4">
+              <div className="col-4 my-3">
                 <div className="card text-center" key={index}>
                   <AiFillDelete
                     className="delete"
-                    onClick={() => Delete(item.id)}
+                    onClick={() => Del(item.id)}
                   />
                   <img
                     className="img ps-5 ms-3"
@@ -69,7 +69,6 @@ const Korzinka = () => {
                   >
                    Learn_More
                   </button>
-
                 </div>
               </div>
             );

@@ -1,0 +1,14 @@
+.mainnn{
+  max-width: 80%;
+  overflow-x: scroll;
+  border-radius: 50px;
+  margin-left: 150px;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+.mainnn::-webkit-scrollbar{
+    display: none;
+}
+.section{
+    background-color: black;
+}
