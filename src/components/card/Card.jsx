@@ -22,6 +22,7 @@ const Card = () => {
         }
       )
       .then((res) => {
+        console.log(res.data);
         window.location.reload();
       })
       .catch((error) => {
@@ -73,7 +74,7 @@ const Card = () => {
                     <h3 className="name">
                       <b>{item.name}</b>
                     </h3>
-                    <button onClick={() => Push(item)} className="batafsil mx-5 mb-3 fw-bold fs-5">
+                    <button onClick={() => Push(item)} className="learn mx-5 mb-3 fw-bold fs-5">
                       Learn_More
                     </button>
                   </div>

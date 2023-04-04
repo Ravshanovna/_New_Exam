@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./korzinka.css";
 import { AiFillDelete } from "react-icons/ai";
+
 const Korzinka = () => {
   const [data, setData] = useState([]);
   const naviget = useNavigate();
@@ -65,7 +66,7 @@ const Korzinka = () => {
                   <h2 className="h4">{item.narx}$</h2>
                   <button
                     onClick={() => Batafsil(item)}
-                    className="batafsil mx-5 mb-3 fw-bold fs-5"
+                    className="learn mx-5 mb-3 fw-bold fs-5"
                   >
                    Learn_More
                   </button>
