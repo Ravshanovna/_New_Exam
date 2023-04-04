@@ -16,7 +16,7 @@ const Card = () => {
     console.log(params,"qora");
     axios
       .put(
-        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1`,
+        `https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params}`,
         {
           status1: true
         }
