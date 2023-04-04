@@ -32,7 +32,7 @@ const Card = () => {
   function Oq(params) {
     console.log(params,"oq");
     axios
-      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1`,{
+      .put(`https://6422d0cd77e7062b3e236a04.mockapi.io/scxcvdfvcx/project1/${params}`,{
           status1: false
         })
       .then((res) => {
